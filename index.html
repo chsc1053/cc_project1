@@ -37,7 +37,7 @@
   </table>
   <script>
     async function fetchStudentData() {
-      const response = await fetch('/api/GetStudentData');
+      const response = await fetch('https://chadasy-function.azurewebsites.net/api/GetStudentData');
       const data = await response.json();
       const tableBody = document.querySelector('#studentTable tbody');
       tableBody.innerHTML = data.map(row =>
