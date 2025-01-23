@@ -5,6 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Count by Country</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,7 +37,7 @@
   </table>
   <script>
     async function fetchStudentData() {
-      const response = await fetch('https://chadasy-ccproject1-function.azurewebsites.net');
+      const response = await fetch('/api/GetStudentData');
       const data = await response.json();
       const tableBody = document.querySelector('#studentTable tbody');
       tableBody.innerHTML = data.map(row =>
